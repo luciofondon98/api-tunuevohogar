@@ -210,8 +210,12 @@ def get_user_recommendation():
         print("user2", user2)
 
         user2Aux = user2
-        metadata = pd.DataFrame(user['historial'])
-        metadata2 = pd.DataFrame(user2['historial'])
+
+        try:
+            metadata = pd.DataFrame(user['historial'])
+            metadata2 = pd.DataFrame(user2['historial'])
+        except:
+            return 99999999999
 
         m = metadata.shape[0]
         dfAux = pd.concat([metadata, metadata2])
