@@ -150,7 +150,8 @@ def get_user_recommendation():
     propiedades = json_data['propiedades']
     usuarios = json_data['usuarios']
 
-
+    df_usuarios = pd.DataFrame(usuarios)
+    print(df_usuarios)
     # usuario = {"nombre": "Lucio", "tipo": 'Particular', 
     #         "historial": [{"titulo": "casa1", "comuna": "Ñuñoa", "latitude": 10, "longitude": 20, "habitaciones": 1, "banos": 2010, "precio": 1000, "tipoVenta": "Arriendo", "superficie": 50}, 
     #                         {"titulo": "casa2", "comuna": "Ñuñoa", "latitude": 10, "longitude": 20, "habitaciones": 1, "banos": 2010, "precio": 2000, "tipoVenta": "Arriendo", "superficie": 50}, 
@@ -246,7 +247,7 @@ def get_user_recommendation():
     for usuario2 in usuarios:
         usersWithScore.append(getScore(usuario, usuario2))
 
-    print(usersWithScore)
+    # print(usersWithScore)
     df_final = pd.DataFrame(usersWithScore).sort_values(by='score')
 
     df_final = df_final.fillna(0)
