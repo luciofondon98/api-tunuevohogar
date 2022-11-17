@@ -210,7 +210,8 @@ def get_user_recommendation():
             metadata = pd.DataFrame(user['historial'])
             metadata2 = pd.DataFrame(user2['historial'])
         except:
-            return 99999999999
+           user2Aux['score'] = 99999999999
+           return user2Aux
 
         m = metadata.shape[0]
         dfAux = pd.concat([metadata, metadata2])
@@ -247,9 +248,9 @@ def get_user_recommendation():
     for usuario2 in usuarios:
         usersWithScore.append(getScore(usuario, usuario2))
 
-    print(usersWithScore[0])
-    df_final = pd.DataFrame(usersWithScore)
-    # df_final = pd.DataFrame(usersWithScore).sort_values(by='score')
+    # print(usersWithScore[0])
+    # df_final = pd.DataFrame(usersWithScore)
+    df_final = pd.DataFrame(usersWithScore).sort_values(by='score')
 
     df_final = df_final.fillna(0)
     df_final = df_final.iloc[1:,:]
