@@ -144,11 +144,9 @@ def get_prop_recommendation():
 @app.route('/v1/getUserRecommendations', methods=['POST'])
 def get_user_recommendation():
     json_data = json.loads(request.data)
-
     
     # guardamos los datos de la request
     usuario = json_data['usuario']
-    print(usuario)
     propiedades = json_data['propiedades']
     usuarios = json_data['usuarios']
 
@@ -205,10 +203,6 @@ def get_user_recommendation():
     scaler.fit(df)
 
     def getScore(user, user2):
-
-        print("user", user)
-        print("user2", user2)
-
         user2Aux = user2
 
         try:
@@ -252,6 +246,7 @@ def get_user_recommendation():
     for usuario2 in usuarios:
         usersWithScore.append(getScore(usuario, usuario2))
 
+    print(usersWithScore)
     df_final = pd.DataFrame(usersWithScore).sort_values(by='score')
 
     df_final = df_final.fillna(0)
