@@ -145,15 +145,13 @@ def get_prop_recommendation():
 def get_user_recommendation():
     json_data = json.loads(request.data)
 
+    print(json_data)
+
     # guardamos los datos de la request
     usuario = json_data['usuario']
     propiedades = json_data['propiedades']
     usuarios = json_data['usuarios']
 
-    print(json_data)
-    print(usuario)
-    print(propiedades)
-    print(usuarios)
 
     # usuario = {"nombre": "Lucio", "tipo": 'Particular', 
     #         "historial": [{"titulo": "casa1", "comuna": "Ñuñoa", "latitude": 10, "longitude": 20, "habitaciones": 1, "banos": 2010, "precio": 1000, "tipoVenta": "Arriendo", "superficie": 50}, 
@@ -208,9 +206,9 @@ def get_user_recommendation():
 
     def getScore(user, user2):
 
-        print(user)
-        print(user2)
-        
+        print("user", user)
+        print("user2", user2)
+
         user2Aux = user2
         metadata = pd.DataFrame(user['historial'])
         metadata2 = pd.DataFrame(user2['historial'])
