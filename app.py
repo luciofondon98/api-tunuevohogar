@@ -248,7 +248,8 @@ def get_user_recommendation():
         usersWithScore.append(getScore(usuario, usuario2))
 
     print(usersWithScore[0])
-    df_final = pd.DataFrame(usersWithScore).sort_values(by='score')
+    df_final = pd.DataFrame(usersWithScore)
+    # df_final = pd.DataFrame(usersWithScore).sort_values(by='score')
 
     df_final = df_final.fillna(0)
     df_final = df_final.iloc[1:,:]
