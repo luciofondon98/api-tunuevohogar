@@ -150,48 +150,53 @@ def get_user_recommendation():
     propiedades = json_data['propiedades']
     usuarios = json_data['usuarios']
 
-    # usuario = {"nombre": "Lucio",
-    #         "historial": [{'titulo': "casa1", 'comuna': "Ñuñoa", 'latitude': 10, 'longitude': 20, 'habitaciones': 1, 'banos': 2010, 'precio': 1000, 'tipoVenta': "Arriendo", 'superficie': 50}, 
-    #                         {'titulo': "casa2", 'comuna': "Ñuñoa", 'latitude': 10, 'longitude': 20, 'habitaciones': 1, 'banos': 2010, 'precio': 2000, 'tipoVenta': "Arriendo", 'superficie': 50}, 
-    #                         {'titulo': "casa3", 'comuna': "Ñuñoa", 'latitude': 10, 'longitude': 20, 'habitaciones': 1, 'banos': 2010, 'precio': 1200, 'tipoVenta': "Arriendo", 'superficie': 50}, 
-    #                         {'titulo': "casa4", 'comuna': "Ñuñoa", 'latitude': 10, 'longitude': 20, 'habitaciones': 1, 'banos': 2010, 'precio': 1500, 'tipoVenta': "Arriendo", 'superficie': 50}]
+    print(json_data)
+    print(usuario)
+    print(propiedades)
+    print(usuarios)
+
+    # usuario = {"nombre": "Lucio", "tipo": 'Particular', 
+    #         "historial": [{"titulo": "casa1", "comuna": "Ñuñoa", "latitude": 10, "longitude": 20, "habitaciones": 1, "banos": 2010, "precio": 1000, "tipoVenta": "Arriendo", "superficie": 50}, 
+    #                         {"titulo": "casa2", "comuna": "Ñuñoa", "latitude": 10, "longitude": 20, "habitaciones": 1, "banos": 2010, "precio": 2000, "tipoVenta": "Arriendo", "superficie": 50}, 
+    #                         {"titulo": "casa3", "comuna": "Ñuñoa", "latitude": 10, "longitude": 20, "habitaciones": 1, "banos": 2010, "precio": 1200, "tipoVenta": "Arriendo", "superficie": 50}, 
+    #                         {"titulo": "casa4", "comuna": "Ñuñoa", "latitude": 10, "longitude": 20, "habitaciones": 1, "banos": 2010, "precio": 1500, "tipoVenta": "Arriendo", "superficie": 50}]
     # }
 
-    # propiedades = [{'titulo': "casa4", 'comuna': "Ñuñoa", 'latitude': 10, 'longitude': 20, 'habitaciones': 1, 'banos': 2010, 'precio': 1500, 'tipoVenta': "Arriendo", 'superficie': 50},
-    # {'titulo': "casa5", 'comuna': "Santiago", 'latitude': -100, 'longitude': 200, 'habitaciones': 5, 'banos': 20100, 'precio': 100000, 'tipoVenta': "Arriendo", 'superficie': 500}, 
-    # {'titulo': "casa6", 'comuna': "Macul", 'latitude': 15, 'longitude': 25, 'habitaciones': 6, 'banos': 201000, 'precio': 1000000, 'tipoVenta': "Arriendo", 'superficie': 5000}, 
-    # {'titulo': "casa7", 'comuna': "Ñuñoa", 'latitude': 10, 'longitude': 20, 'habitaciones': 1, 'banos': 2010, 'precio': 1300, 'tipoVenta': "Arriendo", 'superficie': 50}, 
-    # {'titulo': "casa8", 'comuna': "San Joaquin", 'latitude': 100, 'longitude': 200, 'habitaciones': 9, 'banos': 2010000, 'precio': 10000, 'tipoVenta': "Venta", 'superficie': 500000}]
+    # propiedades = [{"titulo": "casa4", "comuna": "Ñuñoa", "latitude": 10, "longitude": 20, "habitaciones": 1, "banos": 2010, "precio": 1500, "tipoVenta": "Arriendo", "superficie": 50},
+    # {"titulo": "casa5", "comuna": "Santiago", "latitude": -100, "longitude": 200, "habitaciones": 5, "banos": 20100, "precio": 100000, "tipoVenta": "Arriendo", "superficie": 500}, 
+    # {"titulo": "casa6", "comuna": "Macul", "latitude": 15, "longitude": 25, "habitaciones": 6, "banos": 201000, "precio": 1000000, "tipoVenta": "Arriendo", "superficie": 5000}, 
+    # {"titulo": "casa7", "comuna": "Ñuñoa", "latitude": 10, "longitude": 20, "habitaciones": 1, "banos": 2010, "precio": 1300, "tipoVenta": "Arriendo", "superficie": 50}, 
+    # {"titulo": "casa8", "comuna": "San Joaquin", "latitude": 100, "longitude": 200, "habitaciones": 9, "banos": 2010000, "precio": 10000, "tipoVenta": "Venta", "superficie": 500000}]
 
     # usuarios = [{"nombre": "Lucio",
-    #         "historial": [{'titulo': "casa1", 'comuna': "Ñuñoa", 'latitude': 10, 'longitude': 20, 'habitaciones': 1, 'banos': 2010, 'precio': 1000, 'tipoVenta': "Arriendo", 'superficie': 50}, 
-    #                         {'titulo': "casa2", 'comuna': "Ñuñoa", 'latitude': 10, 'longitude': 20, 'habitaciones': 1, 'banos': 2010, 'precio': 2000, 'tipoVenta': "Arriendo", 'superficie': 50}, 
-    #                         {'titulo': "casa3", 'comuna': "Ñuñoa", 'latitude': 10, 'longitude': 20, 'habitaciones': 1, 'banos': 2010, 'precio': 1200, 'tipoVenta': "Arriendo", 'superficie': 50}, 
-    #                         {'titulo': "casa4", 'comuna': "Ñuñoa", 'latitude': 10, 'longitude': 20, 'habitaciones': 1, 'banos': 2010, 'precio': 1500, 'tipoVenta': "Arriendo", 'superficie': 50}]
+    #         "historial": [{"titulo": "casa1", "comuna": "Ñuñoa", "latitude": 10, "longitude": 20, "habitaciones": 1, "banos": 2010, "precio": 1000, "tipoVenta": "Arriendo", "superficie": 50}, 
+    #                         {"titulo": "casa2", "comuna": "Ñuñoa", "latitude": 10, "longitude": 20, "habitaciones": 1, "banos": 2010, "precio": 2000, "tipoVenta": "Arriendo", "superficie": 50}, 
+    #                         {"titulo": "casa3", "comuna": "Ñuñoa", "latitude": 10, "longitude": 20, "habitaciones": 1, "banos": 2010, "precio": 1200, "tipoVenta": "Arriendo", "superficie": 50}, 
+    #                         {"titulo": "casa4", "comuna": "Ñuñoa", "latitude": 10, "longitude": 20, "habitaciones": 1, "banos": 2010, "precio": 1500, "tipoVenta": "Arriendo", "superficie": 50}]
     # },
-    # {"nombre": "Lucio2",
-    #         "historial":
-    # [{'titulo': "casa4", 'comuna': "Ñuñoa", 'latitude': 10, 'longitude': 20, 'habitaciones': 1, 'banos': 2010, 'precio': 1500, 'tipoVenta': "Arriendo", 'superficie': 50},
-    # {'titulo': "casa5", 'comuna': "Santiago", 'latitude': -100, 'longitude': 200, 'habitaciones': 5, 'banos': 20100, 'precio': 100000, 'tipoVenta': "Arriendo", 'superficie': 500}, 
-    # {'titulo': "casa6", 'comuna': "Macul", 'latitude': 15, 'longitude': 25, 'habitaciones': 6, 'banos': 201000, 'precio': 1000000, 'tipoVenta': "Arriendo", 'superficie': 5000}, 
-    # {'titulo': "casa7", 'comuna': "Ñuñoa", 'latitude': 10, 'longitude': 20, 'habitaciones': 1, 'banos': 2010, 'precio': 1300, 'tipoVenta': "Arriendo", 'superficie': 50}, 
-    # {'titulo': "casa8", 'comuna': "San Joaquin", 'latitude': 100, 'longitude': 200, 'habitaciones': 9, 'banos': 2010000, 'precio': 10000, 'tipoVenta': "Venta", 'superficie': 500000}],
+    # {"nombre": "Lucio2", "tipo": "Particular",
+    # "historial":
+    # [{"titulo": "casa4", "comuna": "Ñuñoa", "latitude": 10, "longitude": 20, "habitaciones": 1, "banos": 2010, "precio": 1500, "tipoVenta": "Arriendo", "superficie": 50},
+    # {"titulo": "casa5", "comuna": "Santiago", "latitude": -100, "longitude": 200, "habitaciones": 5, "banos": 20100, "precio": 100000, "tipoVenta": "Arriendo", "superficie": 500}, 
+    # {"titulo": "casa6", "comuna": "Macul", "latitude": 15, "longitude": 25, "habitaciones": 6, "banos": 201000, "precio": 1000000, "tipoVenta": "Arriendo", "superficie": 5000}, 
+    # {"titulo": "casa7", "comuna": "Ñuñoa", "latitude": 10, "longitude": 20, "habitaciones": 1, "banos": 2010, "precio": 1300, "tipoVenta": "Arriendo", "superficie": 50}, 
+    # {"titulo": "casa8", "comuna": "San Joaquin", "latitude": 100, "longitude": 200, "habitaciones": 9, "banos": 2010000, "precio": 10000, "tipoVenta": "Venta", "superficie": 500000}],
     # },
-    # {"nombre": "Lucio3",
+    # {"nombre": "Lucio3", "tipo": "Particular",
     #         "historial":
-    # [{'titulo': "casa4", 'comuna': "Ñuñoa", 'latitude': 10, 'longitude': 20, 'habitaciones': 1, 'banos': 2010, 'precio': 1500, 'tipoVenta': "Arriendo", 'superficie': 50},
-    # {'titulo': "casa5", 'comuna': "Santiago", 'latitude': -100, 'longitude': 200, 'habitaciones': 5, 'banos': 20100, 'precio': 100000, 'tipoVenta': "Arriendo", 'superficie': 500}, 
-    # {'titulo': "casa6", 'comuna': "Macul", 'latitude': 15, 'longitude': 25, 'habitaciones': 6, 'banos': 201000, 'precio': 1000000, 'tipoVenta': "Arriendo", 'superficie': 5000}, 
-    # {'titulo': "casa7", 'comuna': "Ñuñoa", 'latitude': 10, 'longitude': 20, 'habitaciones': 1, 'banos': 2010, 'precio': 1300, 'tipoVenta': "Arriendo", 'superficie': 50}, 
-    # {'titulo': "casa8", 'comuna': "San Joaquin", 'latitude': 100, 'longitude': 200, 'habitaciones': 9, 'banos': 2010000, 'precio': 10000, 'tipoVenta': "Venta", 'superficie': 500000}],
+    # [{"titulo": "casa4", "comuna": "Ñuñoa", "latitude": 10, "longitude": 20, "habitaciones": 1, "banos": 2010, "precio": 1500, "tipoVenta": "Arriendo", "superficie": 50},
+    # {"titulo": "casa5", "comuna": "Santiago", "latitude": -100, "longitude": 200, "habitaciones": 5, "banos": 20100, "precio": 100000, "tipoVenta": "Arriendo", "superficie": 500}, 
+    # {"titulo": "casa6", "comuna": "Macul", "latitude": 15, "longitude": 25, "habitaciones": 6, "banos": 201000, "precio": 1000000, "tipoVenta": "Arriendo", "superficie": 5000}, 
+    # {"titulo": "casa7", "comuna": "Ñuñoa", "latitude": 10, "longitude": 20, "habitaciones": 1, "banos": 2010, "precio": 1300, "tipoVenta": "Arriendo", "superficie": 50}, 
+    # {"titulo": "casa8", "comuna": "San Joaquin", "latitude": 100, "longitude": 200, "habitaciones": 9, "banos": 2010000, "precio": 10000, "tipoVenta": "Venta", "superficie": 500000}],
     # },
-    # {"nombre": "Lucio4",
+    # {"nombre": "Lucio4", "tipo": "Inmobiliaria",
     #         "historial":
-    # [{'titulo': "casa4", 'comuna': "Ñuñoa", 'latitude': 10, 'longitude': 20, 'habitaciones': 1, 'banos': 2010, 'precio': 1500, 'tipoVenta': "Arriendo", 'superficie': 50},
-    # {'titulo': "casa5", 'comuna': "Santiago", 'latitude': -100, 'longitude': 200, 'habitaciones': 5, 'banos': 20100, 'precio': 100000, 'tipoVenta': "Arriendo", 'superficie': 500}, 
-    # {'titulo': "casa6", 'comuna': "Macul", 'latitude': 15, 'longitude': 25, 'habitaciones': 6, 'banos': 201000, 'precio': 1000000, 'tipoVenta': "Arriendo", 'superficie': 5000}, 
-    # {'titulo': "casa7", 'comuna': "Ñuñoa", 'latitude': 10, 'longitude': 20, 'habitaciones': 1, 'banos': 2010, 'precio': 1300, 'tipoVenta': "Arriendo", 'superficie': 50}, 
-    # {'titulo': "casa8", 'comuna': "San Joaquin", 'latitude': 100, 'longitude': 200, 'habitaciones': 9, 'banos': 2010000, 'precio': 10000, 'tipoVenta': "Venta", 'superficie': 500000}]
+    # [{"titulo": "casa4", "comuna": "Ñuñoa", "latitude": 10, "longitude": 20, "habitaciones": 1, "banos": 2010, "precio": 1500, "tipoVenta": "Arriendo", "superficie": 50},
+    # {"titulo": "casa5", "comuna": "Santiago", "latitude": -100, "longitude": 200, "habitaciones": 5, "banos": 20100, "precio": 100000, "tipoVenta": "Arriendo", "superficie": 500}, 
+    # {"titulo": "casa6", "comuna": "Macul", "latitude": 15, "longitude": 25, "habitaciones": 6, "banos": 201000, "precio": 1000000, "tipoVenta": "Arriendo", "superficie": 5000}, 
+    # {"titulo": "casa7", "comuna": "Ñuñoa", "latitude": 10, "longitude": 20, "habitaciones": 1, "banos": 2010, "precio": 1300, "tipoVenta": "Arriendo", "superficie": 50}, 
+    # {"titulo": "casa8", "comuna": "San Joaquin", "latitude": 100, "longitude": 200, "habitaciones": 9, "banos": 2010000, "precio": 10000, "tipoVenta": "Venta", "superficie": 500000}]
     # }
     # ]
 
@@ -202,6 +207,10 @@ def get_user_recommendation():
     scaler.fit(df)
 
     def getScore(user, user2):
+
+        print(user)
+        print(user2)
+        
         user2Aux = user2
         metadata = pd.DataFrame(user['historial'])
         metadata2 = pd.DataFrame(user2['historial'])
