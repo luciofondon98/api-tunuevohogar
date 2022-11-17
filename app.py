@@ -88,6 +88,8 @@ def get_recommendation():
     print("historial propiedades tipo", type(historial_propiedades))
     print("historial propiedades", historial_propiedades)
 
+    print("total propiedades tipo", type(total_propiedades))
+    print("total propiedades", total_propiedades)
     # print(total_propiedades)
 
     # removemos del total de propiedades las que están en el historial
