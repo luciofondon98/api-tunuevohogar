@@ -94,7 +94,7 @@ def get_recommendation():
 
     # removemos del total de propiedades las que están en el historial
     for propiedad in historial_propiedades:
-        if propiedad in historial_propiedades:
+        if propiedad in total_propiedades:
             total_propiedades.remove(propiedad)
 
     print(total_propiedades)
