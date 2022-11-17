@@ -145,10 +145,10 @@ def get_prop_recommendation():
 def get_user_recommendation():
     json_data = json.loads(request.data)
 
-    print(json_data)
-
+    
     # guardamos los datos de la request
     usuario = json_data['usuario']
+    print(usuario)
     propiedades = json_data['propiedades']
     usuarios = json_data['usuarios']
 
